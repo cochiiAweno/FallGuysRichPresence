@@ -1,5 +1,4 @@
-# FallGuysRichPresence
-Fall Guys: Ultimate Knockout Custom Discord Rich Presence
+# Fall Guys: Ultimate Knockout Custom Discord Rich Presence
 
 Download at: https://github.com/cochiiAweno/FallGuysRichPresence/releases
 
