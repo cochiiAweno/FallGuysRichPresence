@@ -1,6 +1,8 @@
 # FallGuysRichPresence
 Fall Guys: Ultimate Knockout Custom Discord Rich Presence
 
+Download at: https://github.com/cochiiAweno/FallGuysRichPresence/releases
+
 1. Create an application in Discord Developers. (https://discord.com/developers/applications)
 2. Name the application: Fall Guys: Ultimate Knockout and copy the Application ID.
 3. Go to Rich Presence/ Art Assets, upload the logo for the presence and save changes. (e.j logo_s5.png)
