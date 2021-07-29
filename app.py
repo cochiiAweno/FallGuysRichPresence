@@ -47,6 +47,7 @@ os.system('start /min "" "easyrp"')
 os.system("cls")
 def mainpresence():
     global level
+    global players
     while True:
         fgLog = open("C:/Users/"+user+"/AppData/LocalLow/Mediatonic/FallGuys_client/Player.log", "r")
         logLines = fgLog.readlines()
@@ -55,6 +56,8 @@ def mainpresence():
                 if "roundID" in line: levelInfo = line
             levelS = levelInfo.split(' loadingScreen')[0]
             level = levelS.split('roundID=')[1]
+            playersS = levelInfo.split(' randSeed')[0]
+            players = playersS.split('Count=')[1]
             if "round_biggestfan" in level:
                 level = "Big Fans"
             elif "round_king_of_the_hill" in level:
@@ -169,9 +172,11 @@ def mainpresence():
         time.sleep(10)
         
 level = "Lobby"
+players = "0"
 def writeini():
     global level
-    inifile = '[Identifiers]\nClientID='+appid+'\n\n[State]\nState='+fgname+'\nDetails=In '+level+'\nStartTimestamp=' +str(timeplaying)+'\nEndTimestamp=\n[Images]\nLargeImage='+logoname+'\nLargeImageTooltip=Fall Guys: Ultimate Knockout!\nSmallImage=\nSmallImageTooltip=PLACEHOLDER'
+    global players
+    inifile = '[Identifiers]\nClientID='+appid+'\n\n[State]\nState='+fgname+'\nDetails=In '+level+' with '+players+' players\nStartTimestamp=' +str(timeplaying)+'\nEndTimestamp=\n[Images]\nLargeImage='+logoname+'\nLargeImageTooltip=Fall Guys: Ultimate Knockout!\nSmallImage=\nSmallImageTooltip=PLACEHOLDER'
     ini = open("config.ini", "w", encoding ='utf-8')
     ini.write(inifile)        
 writeini()
